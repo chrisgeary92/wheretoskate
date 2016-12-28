@@ -1,0 +1,17 @@
+{
+  "name": "where-to-skate",
+  "version": "1.0.0",
+  "description": "Order ice rinks in the UK by distance.",
+  "author": "Christopher Geary",
+  "license": "MIT",
+  "devDependencies": {
+    "gulp": "^3.9.0",
+    "gulp-autoprefixer": "^3.0.1",
+    "gulp-clean-css": "^2.0.13",
+    "gulp-livereload": "^3.8.1",
+    "gulp-notify": "^2.2.0",
+    "gulp-plumber": "^1.0.1",
+    "gulp-sass": "^2.0.3",
+    "gulp-watch": "^4.3.10"
+  }
+}
