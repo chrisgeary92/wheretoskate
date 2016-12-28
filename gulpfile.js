@@ -5,6 +5,7 @@ var plumber = require('gulp-plumber');
 var sass = require('gulp-sass');
 var livereload = require('gulp-livereload');
 var htmlhint = require('gulp-htmlhint');
+var htmlmin = require('gulp-htmlmin');
 
 // --
 
@@ -27,6 +28,15 @@ gulp.task('lint', () => {
     return gulp.src(['./src/index.html'])
         .pipe(htmlhint('.htmlhintrc'))
         .pipe(htmlhint.reporter());
+});
+
+gulp.task('build:html', () => {
+    return gulp.src(['./src/index.html'])
+        .pipe(htmlmin({
+            collapseWhitespace: true,
+            conservativeCollapse: true
+        }))
+        .pipe(gulp.dest('./public'));
 });
 
 gulp.task('html', () => gulp.src(['./src/index.html']).pipe(livereload()));
