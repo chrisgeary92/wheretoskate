@@ -4,6 +4,9 @@
   "description": "Order ice rinks in the UK by distance.",
   "author": "Christopher Geary",
   "license": "MIT",
+  "scripts": {
+    "build": "gulp build"
+  },
   "devDependencies": {
     "gulp": "^3.9.0",
     "gulp-autoprefixer": "^3.0.1",

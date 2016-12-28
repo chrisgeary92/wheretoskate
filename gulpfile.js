@@ -37,4 +37,5 @@ gulp.task('watch', ['styles'], () => {
     gulp.watch('./*.html', ['html']);
 });
 
-gulp.task('default', ['styles', 'scripts']);
+gulp.task('default', ['styles']);
+gulp.task('build', ['styles']);
