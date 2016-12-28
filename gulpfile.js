@@ -1,7 +1,6 @@
 var gulp = require('gulp');
 var autoprefixer = require('gulp-autoprefixer');
 var cleancss = require('gulp-clean-css');
-var notify = require('gulp-notify');
 var plumber = require('gulp-plumber');
 var sass = require('gulp-sass');
 var livereload = require('gulp-livereload');
@@ -21,11 +20,7 @@ gulp.task('styles', () => {
         .pipe(autoprefixer({ browsers: ['last 2 versions', 'IE 11'] }))
         .pipe(cleancss())
         .pipe(gulp.dest('public/css'))
-        .pipe(livereload())
-        .pipe(notify({
-            'title': 'wheretoskate!',
-            'message': 'SCSS == Done!'
-        }));
+        .pipe(livereload());
 });
 
 gulp.task('lint', () => {
