@@ -50,4 +50,4 @@ gulp.task('watch', ['styles'], () => {
 });
 
 gulp.task('default', ['styles']);
-gulp.task('build', ['styles']);
+gulp.task('build', ['styles', 'build:html']);
