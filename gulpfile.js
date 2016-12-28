@@ -5,6 +5,7 @@ var notify = require('gulp-notify');
 var plumber = require('gulp-plumber');
 var sass = require('gulp-sass');
 var livereload = require('gulp-livereload');
+var htmlhint = require('gulp-htmlhint');
 
 // --
 
@@ -25,6 +26,12 @@ gulp.task('styles', () => {
             'title': 'wheretoskate!',
             'message': 'SCSS == Done!'
         }));
+});
+
+gulp.task('lint', () => {
+    return gulp.src(['index.html'])
+        .pipe(htmlhint('.htmlhintrc'))
+        .pipe(htmlhint.reporter());
 });
 
 gulp.task('html', () => gulp.src(['*.html']).pipe(livereload()));

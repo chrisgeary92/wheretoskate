@@ -5,12 +5,14 @@
   "author": "Christopher Geary",
   "license": "MIT",
   "scripts": {
+    "lint": "gulp lint",
     "build": "gulp build"
   },
   "devDependencies": {
     "gulp": "^3.9.0",
     "gulp-autoprefixer": "^3.0.1",
     "gulp-clean-css": "^2.0.13",
+    "gulp-htmlhint": "^0.3.1",
     "gulp-livereload": "^3.8.1",
     "gulp-notify": "^2.2.0",
     "gulp-plumber": "^1.0.1",
