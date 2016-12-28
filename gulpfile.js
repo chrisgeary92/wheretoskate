@@ -15,12 +15,12 @@ var errorHandler = function (err) {
 }
 
 gulp.task('styles', () => {
-    return gulp.src('assets/sass/app.scss')
+    return gulp.src('src/sass/app.scss')
         .pipe(plumber({ errorHandler }))
         .pipe(sass())
         .pipe(autoprefixer({ browsers: ['last 2 versions', 'IE 11'] }))
         .pipe(cleancss())
-        .pipe(gulp.dest('assets/css'))
+        .pipe(gulp.dest('public/css'))
         .pipe(livereload())
         .pipe(notify({
             'title': 'wheretoskate!',
@@ -29,19 +29,19 @@ gulp.task('styles', () => {
 });
 
 gulp.task('lint', () => {
-    return gulp.src(['index.html'])
+    return gulp.src(['./src/index.html'])
         .pipe(htmlhint('.htmlhintrc'))
         .pipe(htmlhint.reporter());
 });
 
-gulp.task('html', () => gulp.src(['*.html']).pipe(livereload()));
+gulp.task('html', () => gulp.src(['./src/index.html']).pipe(livereload()));
 
 // --
 
 gulp.task('watch', ['styles'], () => {
     livereload.listen();
-    gulp.watch(['./assets/sass/**/*.scss'], ['styles']);
-    gulp.watch('./*.html', ['html']);
+    gulp.watch(['./src/sass/**/*.scss'], ['styles']);
+    gulp.watch('./src/index.html', ['html']);
 });
 
 gulp.task('default', ['styles']);

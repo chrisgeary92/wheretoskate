@@ -1,7 +1,7 @@
 # app
 
+/public/*
 /node_modules
-/assets/css/app.css
 
 # misc
 
