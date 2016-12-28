@@ -9,12 +9,12 @@
         "source": "**",
         "destination": "/index.html"
       }
+    ],
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "/src",
+      "**/node_modules/**"
     ]
-  },
-  "ignore": [
-    "firebase.json",
-    "**/.*",
-    "/src",
-    "**/node_modules/**"
-  ]
+  }
 }
