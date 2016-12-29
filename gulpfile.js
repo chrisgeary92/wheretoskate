@@ -6,6 +6,7 @@ var sass = require('gulp-sass');
 var livereload = require('gulp-livereload');
 var htmlhint = require('gulp-htmlhint');
 var htmlmin = require('gulp-htmlmin');
+var inlinesource = require('gulp-inline-source');
 
 // --
 
@@ -32,6 +33,9 @@ gulp.task('lint', () => {
 
 gulp.task('build:html', () => {
     return gulp.src(['./src/index.html'])
+        .pipe(inlinesource({
+            rootpath: 'public'
+        }))
         .pipe(htmlmin({
             collapseWhitespace: true,
             conservativeCollapse: true
