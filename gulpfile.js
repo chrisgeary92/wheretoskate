@@ -31,7 +31,7 @@ gulp.task('lint', () => {
         .pipe(htmlhint.reporter());
 });
 
-gulp.task('build:html', () => {
+gulp.task('build:html', ['styles'], () => {
     return gulp.src(['./src/index.html'])
         .pipe(inlinesource({
             rootpath: 'public'
@@ -54,4 +54,4 @@ gulp.task('watch', ['styles'], () => {
 });
 
 gulp.task('default', ['styles']);
-gulp.task('build', ['styles', 'build:html']);
+gulp.task('build', ['build:html']);
