@@ -21,7 +21,7 @@ gulp.task('styles', () => {
         .pipe(sass())
         .pipe(autoprefixer({ browsers: ['last 2 versions', 'IE 11'] }))
         .pipe(cleancss())
-        .pipe(gulp.dest('public/css'))
+        .pipe(gulp.dest('src/css'))
         .pipe(livereload());
 });
 
@@ -34,7 +34,7 @@ gulp.task('lint', () => {
 gulp.task('build:html', ['styles'], () => {
     return gulp.src(['./src/index.html'])
         .pipe(inlinesource({
-            rootpath: 'public'
+            rootpath: 'src'
         }))
         .pipe(htmlmin({
             collapseWhitespace: true,

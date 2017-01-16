@@ -1,6 +1,7 @@
 # app
 
 /public/*
+/src/css
 /node_modules
 
 # misc
